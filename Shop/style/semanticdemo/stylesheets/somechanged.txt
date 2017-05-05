@@ -1,0 +1,10 @@
+aaa
+sdfasd
+sdfasdf
+bbb
+5BEGIN
+6asdxxx
+dfasdf
+xxx
+END
+ccc

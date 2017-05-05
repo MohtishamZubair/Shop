@@ -1,0 +1,53 @@
+﻿@model List<Shop.Models.UserView>
+
+@{
+    ViewBag.Title = "SetRoles";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int counter = 0;
+}
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <p>Set User Role</p>
+    <hr />
+    <table class="table">
+        <tr>
+            <th>
+
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Role
+            </th>
+            <th></th>
+        </tr>
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            <tr>
+                <td>
+                    @Html.HiddenFor(m=>m[i].UserId,Model[i].UserId)
+                </td>
+                <td>
+                    @Html.DisplayFor(m=>m[i].UserName)
+                </td>
+                <td>                    
+                    @Html.EditorFor(m=>m[i].UserRoles)
+                </td>
+            </tr>
+        }
+
+    </table>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Save Roles" class="btn btn-default" />
+        </div>
+    </div>
+
+
+
+}
